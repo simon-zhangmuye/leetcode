@@ -22,24 +22,24 @@ __date__ = '2019/9/18 12:06'
 # ]
 
 
-    def generate(self, numRows):
-        """
-        杨辉三角
-        :type numRows: int
-        :rtype: List[List[int]]
-        """
-        if numRows <= 0: return []
-        triangle = []
-        for row in range(numRows):
-            if row == 0:
-                triangle.append([1])
-            else:
-                # row = 1, col = row + 1, c (0,1)
-                tmp = [1]
-                # 这里遍历range(row)是因为, 当前行的元素来自于前一行.
-                for c in range(row):
-                    # 当c == row-1时, 表示当前列为倒数第一个元素, 该元素与哨兵位置的0元素相加.
-                    sum = (triangle[row-1][c] + 0) if (c == row-1) else (triangle[row-1][c]+triangle[row-1][c+1])
-                    tmp.append(sum)
-                triangle.append(tmp)
-        return triangle
+def generate(self, numRows):
+    """
+    杨辉三角
+    :type numRows: int
+    :rtype: List[List[int]]
+    """
+    if numRows <= 0: return []
+    triangle = []
+    for row in range(numRows):
+        if row == 0:
+            triangle.append([1])
+        else:
+            # row = 1, col = row + 1, c (0,1)
+            tmp = [1]
+            # 这里遍历range(row)是因为, 当前行的元素来自于前一行.
+            for c in range(row):
+                # 当c == row-1时, 表示当前列为倒数第一个元素, 该元素与哨兵位置的0元素相加.
+                sum = (triangle[row-1][c] + 0) if (c == row-1) else (triangle[row-1][c]+triangle[row-1][c+1])
+                tmp.append(sum)
+            triangle.append(tmp)
+    return triangle
