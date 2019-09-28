@@ -25,9 +25,9 @@ __date__ = '2019/9/28 8:41'
 # 尽可能想出更多的解决方案，至少有三种不同的方法可以解决这个问题。
 # 要求使用空间复杂度为 O(1) 的 原地 算法。
 class Solution:
-def rotate(self, nums: List[int], k: int) -> None:
-    for i in range(k):
-        tmp = nums[-1]
-        for j in range(len(nums)-1, 0, -1):
-            nums[j] = nums[j-1]
-        nums[0] = tmp
+    def rotate(self, nums: List[int], k: int) -> None:
+        for i in range(k):
+            tmp = nums[-1]
+            for j in range(len(nums)-1, 0, -1):
+                nums[j] = nums[j-1]
+            nums[0] = tmp
