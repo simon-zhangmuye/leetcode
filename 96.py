@@ -1,0 +1,20 @@
+# coding=utf-8
+__author__ = 'Simon Zhang'
+__date__ = '2019/10/22 9:14'
+
+
+# 给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。
+#
+# 你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+
+class Solution:
+    def swapPairs(self, head: ListNode) -> ListNode:
+        thead = ListNode(-1)
+        thead.next = head
+        c = thead
+        while c.next and c.next.next:
+            a, b=c.next, c.next.next
+            c.next, a.next = b, b.next
+            b.next = a
+            c = c.next.next
+        return thead.next
