@@ -23,3 +23,9 @@
 # 所有输入均为小写字母。
 # 不考虑答案输出的顺序。
 
+class Solution(object):
+    def groupAnagrams(self, strs):
+        ans = collections.defaultdict(list)
+        for s in strs:
+            ans[tuple(sorted(s))].append(s)
+        return ans.values()
