@@ -30,8 +30,6 @@
 # 每个测试用例最多调用 10000 次 ping。
 # 每个测试用例会使用严格递增的 t 值来调用 ping。
 # 每次调用 ping 都有 1 <= t <= 10^9。
- 
-
 
 class RecentCounter(object):
     def __init__(self):
