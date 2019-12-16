@@ -26,6 +26,15 @@
 # 0 <= A[i] <= 5000
 
 
+from collections import deque
+
 class Solution:
     def sortArrayByParity(self, A: List[int]) -> List[int]:
-        return list(filter(lambda x:x%2==0 , A)) + list(filter(lambda x:x%2!=0 , A))
+        d = deque()
+        for i in A:
+            if i%2 == 0:
+                d.appendleft(i)
+            else:
+                d.append(i)
+        return d
+
